@@ -188,16 +188,49 @@ console.log(grade);
 //Create a function that counts the number of vowels within a string. It should handle both capitalized and uncapitalized vowels.
 // Hint - you may need to study tomorrow's traning kit on arrays 
 // try looking up the .includes() method
+ function countVowels (string) {
+     let count = 0;
+     let lowercaseString = string.toLowerCase();
+     let splitString = lowercaseString.split("");
 
+     splitString.forEach(c => {if (c === "a" || c === "e" || c === "i" || c === "o" || c === "u") {
+         count++;
+     }});
+     return count;
+ }
 
-
+console.log(countVowels("hEllo world"));
 
 
 /************************************************************** Stretch **************************************************************/
 //Take Rock, Paper, Sissors further
 //update your rock papers sissors code below to take a prompt from a user using the window object
+let userInput = prompt("rock, paper, or scissors?")
 
+function game (input) {
+    let random = Math.floor(Math.random() * 3) + 1;
+    let compChoice;
+    let lowercaseInput = input.toLowerCase();
 
+    if (random === 1) {
+        compChoice = "rock";
+    } else if (random === 2) {
+        compChoice = "paper";
+    } else if (random === 3) {
+        compChoice = "scissors";
+    }
 
+    if ((lowercaseInput==="rock" && compChoice === "rock") || (lowercaseInput==="paper" && compChoice === "paper") || (lowercaseInput === "scissors" && compChoice === "scissors")) {
+        return "Tie";
+    } else if ((lowercaseInput === "rock" && compChoice === "paper") || (lowercaseInput === "scissors" && compChoice === "rock") || (lowercaseInput === "paper" && compChoice === "scissors")) {
+        return "Lose";
+    } else if ((lowercaseInput === "rock" && compChoice === "scissors") || (lowercaseInput === "paper" && compChoice === "rock") || (lowercaseInput === "scissors" && compChoice === "paper")) {
+        return "Win";
+    } 
+}
+  
+  let newResult = game(userInput);
+
+  console.log(newResult);
 
 
