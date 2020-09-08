@@ -1,8 +1,10 @@
 /************************************************************** Task 1: Warm-up! **************************************************************/
 //Task a: declare a variable called votingAge, console log true if age > 18 (no function required)
-let votingAge = 19;
+let votingAge = 18;
+let age = 19;
 
-if (votingAge > 18) {
+
+if (age > votingAge) {
     console.log(true);
 }
 
@@ -110,7 +112,7 @@ function game (input) {
         compChoice = "scissors";
     }
 
-    if ((input==="rock" && compChoice === "rock") || (input==="paper" && compChoice === "paper") || input === ("scissors" && compChoice === "scissors")) {
+    if ((input==="rock" && compChoice === "rock") || (input==="paper" && compChoice === "paper") || (input === "scissors" && compChoice === "scissors")) {
         return "Tie";
     } else if ((input === "rock" && compChoice === "paper") || (input === "scissors" && compChoice === "rock") || (input === "paper" && compChoice === "scissors")) {
         return "Lose";
