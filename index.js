@@ -190,8 +190,7 @@ console.log(grade);
 // try looking up the .includes() method
  function countVowels (string) {
      let count = 0;
-     let lowercaseString = string.toLowerCase();
-     let splitString = lowercaseString.split("");
+     let splitString = string.toLowerCase().split("");
 
      splitString.forEach(c => {if (c === "a" || c === "e" || c === "i" || c === "o" || c === "u") {
          count++;
