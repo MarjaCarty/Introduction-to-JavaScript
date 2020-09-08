@@ -173,7 +173,7 @@ function grader(grade) {
     } else if (grade < 70 && grade >= 60) {
         return "D";
     } else {
-        return "E";
+        return "F";
     }
 }
 
