@@ -114,7 +114,7 @@ function game (input) {
         return "Tie";
     } else if ((input === "rock" && compChoice === "paper") || (input === "scissors" && compChoice === "rock") || (input === "paper" && compChoice === "scissors")) {
         return "Lose";
-    } else if ((input === "rock" && finalCompChoice === "scissors") || (input === "paper" && finalCompChoice === "rock") || (input === "scissors" && finalCompChoice === "paper")) {
+    } else if ((input === "rock" && compChoice === "scissors") || (input === "paper" && compChoice === "rock") || (input === "scissors" && compChoice === "paper")) {
         return "Win";
     } 
 }
@@ -145,8 +145,13 @@ function centimeterConverter (feet) {
 // create a function called annoyingSong
 // the function should take a starting number as an argument and count down - at each iteration it should log (number) bottles of soda on the wall, (number) bottles of soda, take one down pass it around (number left over) bottles of soda on the wall`
   
+function annoyingSong(num) {
+    for (let i = num; i > 0; i--) {
+        console.log(`${i} bottles of soda on the wall, ${i} bottles of soda, take one down, pass it around, ${i-1} bottles of soda on the wall`);
+    }
+}
 
-
+annoyingSong(10);
 
 
 /************************************************************** Task 7 **************************************************************/
@@ -158,7 +163,22 @@ function centimeterConverter (feet) {
 //60s should be D 
 //and anything below 60 should be F
   
+function grader(grade) {
+    if (grade >= 90) {
+        return "A";
+    } else if (grade < 90 && grade >= 80) {
+        return "B";
+    } else if (grade < 80 && grade >= 70) {
+        return "C";
+    } else if (grade < 70 && grade >= 60) {
+        return "D";
+    } else {
+        return "E";
+    }
+}
 
+let grade = grader(80);
+console.log(grade);
   
   
 
