@@ -10,10 +10,11 @@ if (votingAge > 18) {
 
 
 //Task b: declare a variable and then use a conditional to change the value of that variable based on the value assigned to a second variable (no function required)
-let secondVariable = "start!";
+let firstVariable = "first"
+let secondVariable = "second";
 
-if (secondVariable === "start!") {
-    secondVariable = "changed!"
+if (firstVariable === "first") {
+    secondVariable = firstVariable;
 }
 
 
@@ -63,7 +64,7 @@ function dogYears (age) {
 // when you are finished invoke your function with the weight of 15 lbs and the age of 1 year - if your calculations are correct your result should be 0.44999999999999996
   
 function dogFeeder (age, weight) {
-    if (age > 1) {
+    if (age >= 1) {
         if (weight <= 5) {
             return weight*.05;
         } else if (weight >= 6 && weight <= 10){
@@ -73,7 +74,7 @@ function dogFeeder (age, weight) {
         } else if (weight > 15) {
             return weight*.02;
         }
-    } else if (age <= 1) {
+    } else if (age < 1) {
         if (age >= 0.166 && age <= 0.333) {
             return weight*.1;
         } else if (age >= 0.334 && age <= 0.583) {
@@ -97,20 +98,45 @@ console.log(finalOutput);
 // use math.random to determine the computers choice 
 // hint while you can complete this with only conditionals based on strings it may help to equate choice to a number 
 
+function game (input) {
+    let random = Math.floor(Math.random() * 3) + 1;
+    let compChoice;
+
+    if (random === 1) {
+        compChoice = "rock";
+    } else if (random === 2) {
+        compChoice = "paper";
+    } else if (random === 3) {
+        compChoice = "scissors";
+    }
+
+    if ((input==="rock" && compChoice === "rock") || (input==="paper" && compChoice === "paper") || input === ("scissors" && compChoice === "scissors")) {
+        return "Tie";
+    } else if ((input === "rock" && compChoice === "paper") || (input === "scissors" && compChoice === "rock") || (input === "paper" && compChoice === "scissors")) {
+        return "Lose";
+    } else if ((input === "rock" && finalCompChoice === "scissors") || (input === "paper" && finalCompChoice === "rock") || (input === "scissors" && finalCompChoice === "paper")) {
+        return "Win";
+    } 
+}
   
-  
+  let result = game("rock");
+
+  console.log(result);
 
 /************************************************************** Task 5 **************************************************************/
 //Metric Converter
 //a. KM to Miles - should take the number of kilometers and convert it to the equal number of miles
 
-
-
+function mileConverter (km) {
+    return km * 0.621271;
+}
 
 
 //b. Feet to CM - should take the number of feet and convert it to the equal number of centimeters
   
-
+function centimeterConverter (feet) {
+    return feet * 30.48;
+}
 
 
 
